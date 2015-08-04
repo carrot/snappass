@@ -13,8 +13,8 @@ app.config.update(
     dict(STATIC_URL=os.environ.get('STATIC_URL', 'static')))
 
 id_ = lambda: uuid.uuid4().hex
-redis_host = os.environ.get('REDIS_HOST', 'localhost')
-redis_client = redis.StrictRedis(host=redis_host, port=6379, db=0)
+redis_host = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379')
+redis_client = redis.StrictRedis.from_url(redis_host, db=0)
 
 time_conversion = {
     'week': 604800,
