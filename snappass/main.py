@@ -82,7 +82,7 @@ def show_password(password_key):
 
 
 def main():
-    app.run(host='0.0.0.0', port=(int(os.environ['PORT']) or 5000), debug=True)
+    app.run(host='0.0.0.0', port=(int(os.environ['PORT']) or 5000), debug=False)
 
 
 if __name__ == '__main__':
